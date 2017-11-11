@@ -1,5 +1,6 @@
 package com.itla.mudat;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public final static String NOMBRE = "nombre";
     EditText nombreEditText;
 
     @Override
@@ -20,9 +22,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void nombreButton_Click(View view) {
-        TextView textView = (TextView) findViewById(R.id.resultadoTextView);
-        textView.setText(nombreEditText.getText());
-        Toast.makeText(this, "Listo...", Toast.LENGTH_SHORT).show();
+        if(nombreEditText.getText().length() <= 0){
+            nombreEditText.setError("Valor Obligatorio....");
+            return;
+        }
+
+        Intent intent = new Intent(this, VisualizarActivity.class);
+
+        Bundle b = new Bundle();
+        b.putString(MainActivity.NOMBRE, nombreEditText.getText().toString());
+        intent.putExtras(b);
+
+        startActivity(intent);
     }
 
     public void limpiarButton_Click(View view) {
