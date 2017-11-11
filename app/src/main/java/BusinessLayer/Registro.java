@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 /**
- * Created by Frandy Javier on 12/04/2015.
+ * Created by Frandy Javier on 11/11/2017.
  */
 public interface Registro {
 

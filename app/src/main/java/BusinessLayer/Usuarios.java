@@ -9,7 +9,7 @@ import java.io.IOException;
 import DataLayer.DbHelper;
 
 /**
- * Created by Frandy Javier on 10/04/2015.
+ * Created by Frandy Javier on 11/11/2017.
  */
 public class Usuarios implements Registro {
 

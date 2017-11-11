@@ -58,7 +58,7 @@ public class Utilitario {
             final byte[] data = dataStream.toByteArray();
             bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
         } catch (IOException e) {
-            Log.e("VentasMovilHD", "Could not load Bitmap from: " + url);
+            Log.e("Mudat", "Could not load Bitmap from: " + url);
         } finally {
             closeStream(in);
             closeStream(out);
@@ -77,7 +77,7 @@ public class Utilitario {
             try {
                 stream.close();
             } catch (IOException e) {
-                Log.e("VentasMovilHD", "Could not close stream", e);
+                Log.e("Mudat", "Could not close stream", e);
             }
         }
     }
@@ -123,7 +123,7 @@ public class Utilitario {
                 return image;
             }
         } catch (Exception e) {
-            Log.e("getImage", e.toString());
+            Log.e("Mudat", e.toString());
         }
 
         return image;
@@ -131,30 +131,6 @@ public class Utilitario {
 
     public static Bitmap getBitMapFromResorce(int Id) {
         return BitmapFactory.decodeResource(null, Id);
-    }
-
-    public static void downloadFile(String uRl, Activity activity, String Ruta, String fileName) {
-
-        File sdCardDirectory = Environment.getExternalStorageDirectory();
-
-        File dir = new File(sdCardDirectory.getAbsolutePath() + Ruta);
-
-        if (!dir.exists()) {
-            dir.mkdirs();
-        }
-
-        DownloadManager mgr = (DownloadManager) activity.getSystemService(Context.DOWNLOAD_SERVICE);
-
-        Uri downloadUri = Uri.parse(uRl);
-        DownloadManager.Request request = new DownloadManager.Request(downloadUri);
-
-        request.setAllowedNetworkTypes(
-                DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE)
-                .setAllowedOverRoaming(false).setTitle("Ventas Movil HD")
-                .setDescription("Descargando archivo")
-                .setDestinationInExternalPublicDir(Ruta, fileName);
-        mgr.enqueue(request);
-
     }
 
     public static String getIdentificadorUnico(Context context) {
@@ -412,7 +388,7 @@ public class Utilitario {
             fechaEnviar = formatoDelTexto.parse(fecha);
             return fechaEnviar;
         } catch (ParseException ex) {
-            Log.e("VentasMovilHD", "Error en ObjectHelpers: " + ex.getMessage());
+            Log.e("Mudat", "Error en ObjectHelpers: " + ex.getMessage());
             return null;
         }
     }
