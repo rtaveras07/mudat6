@@ -167,7 +167,7 @@ public class Usuarios implements Registro {
     }
 
     @Override
-    public boolean Insertar() {
+    public boolean insertar() {
         db = new DbHelper(this.context);
         this.setSuscrito(true);
 
@@ -177,14 +177,14 @@ public class Usuarios implements Registro {
     }
 
     @Override
-    public boolean Modificar() {
+    public boolean modificar() {
         db = new DbHelper(this.context);
 
         return db.Modificar("Usuarios", Valores(), "IdUsuario = ?", new String[]{(String.valueOf(IdUsuario))});
     }
 
     @Override
-    public boolean Eliminar() {
+    public boolean eliminar() {
         db = new DbHelper(this.context);
 
         db.EjecutarSQL("DELETE FROM Usuarios",null);
@@ -194,7 +194,7 @@ public class Usuarios implements Registro {
     }
 
     @Override
-    public boolean Buscar(String Id) {
+    public boolean buscar(String Id) {
         boolean retorno = false;
         db = new DbHelper(this.context);
         Log.i("idUsuario" + Id, "Este sera el que se buscara");
@@ -224,7 +224,7 @@ public class Usuarios implements Registro {
     }
 
     @Override
-    public Cursor BuscarLista(String[] Columns, String WhereClausure, String[] WhereArgs, String GroupBy, String Having, String OrderBy) {
+    public Cursor buscarLista(String[] Columns, String WhereClausure, String[] WhereArgs, String GroupBy, String Having, String OrderBy) {
         db = new DbHelper(this.context);
         Cursor Retorno = null;
 
@@ -235,7 +235,7 @@ public class Usuarios implements Registro {
     }
 
     @Override
-    public void InsertarQuery(String Sql) {
+    public void insertarQuery(String Sql) {
 
     }
 
