@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         nombreEditText = (EditText) findViewById(R.id.nombreEditText);
     }
 
-    public void nombreButton_Click(View view) {
+    public void nombreButtonClick(View view) {
         if(nombreEditText.getText().length() <= 0){
             nombreEditText.setError("Valor Obligatorio....");
             return;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void limpiarButton_Click(View view) {
+    public void limpiarButtonClick(View view) {
         nombreEditText.setText("");
         Toast.makeText(this, "Limpio...", Toast.LENGTH_SHORT).show();
     }

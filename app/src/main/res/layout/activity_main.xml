@@ -37,14 +37,14 @@
                     android:id="@+id/nombreButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="nombreButton_Click"
+                    android:onClick="nombreButtonClick"
                     android:text="@string/click_para_guardar"/>
 
                 <Button
                     android:id="@+id/limpiarButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="limpiarButton_Click"
+                    android:onClick="limpiarButtonClick"
                     android:text="@string/limpiar_texto"/>
 
             </LinearLayout>
