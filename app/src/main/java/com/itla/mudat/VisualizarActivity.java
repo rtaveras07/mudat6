@@ -12,12 +12,11 @@ public class VisualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizar);
 
-
-        Bundle b = getIntent().getExtras();
+        Intent intent = getIntent();
         String value = "";
 
-        if(b != null)
-            value = b.getString(MainActivity.NOMBRE);
+        if(intent.getExtras() != null)
+            value = intent.getExtras().getString(MainActivity.NOMBRE);
 
         TextView resultadoTextView = (TextView) findViewById(R.id.resultadoTextView);
         resultadoTextView.setText(value);

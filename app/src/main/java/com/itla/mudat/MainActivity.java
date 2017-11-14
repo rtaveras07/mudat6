@@ -28,11 +28,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(this, VisualizarActivity.class);
-
-        Bundle b = new Bundle();
-        b.putString(MainActivity.NOMBRE, nombreEditText.getText().toString());
-        intent.putExtras(b);
-
+        intent.putExtra(MainActivity.NOMBRE, nombreEditText.getText().toString());
         startActivity(intent);
     }
 
