@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Mudat.iml" filepath="$PROJECT_DIR$/Mudat.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mudat.iml" filepath="$PROJECT_DIR$/mudat.iml" />
     </modules>
   </component>
 </project>
